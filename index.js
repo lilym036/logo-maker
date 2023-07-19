@@ -36,13 +36,13 @@ function questions() {
     // }
 
 questions() 
-.then((data) => {
-    console.log(data);
+.then((response) => {
+    console.log(response);
     // return generateResponses(response);
 })
-.then ((response) => {
-    return writeFile(response);
-})
+// .then ((response) => {
+//     return writeFile(response);
+// })
 .catch (err => {
      console.log(err)
 })
