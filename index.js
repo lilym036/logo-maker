@@ -1,9 +1,12 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const Triangle= require('./lib/triangle');
+const Square= require('./lib/square');
+const Circle= require('./lib/circle');
 
 
-function questions() {
-    return inquirer.prompt ([
+// function questions() {
+    inquirer.prompt ([
         {
             type: 'input',
             message: 'Please choose up to three characters.',
@@ -15,10 +18,10 @@ function questions() {
             name: 'textColor',
         },
         {
-            type: 'checkbox',
+            type: 'list',
             message: 'Please choose a shape from the options listed?',
             name: 'shape',
-            choices: ['circle', 'triangle', 'square']
+            choices: ['Circle', 'Triangle', 'Square']
         },
         {
             type: 'input',
@@ -26,19 +29,30 @@ function questions() {
             name: 'shapeColor',
         },
     
-    ]);
-    }
+    ])
+    // }
 
     // function writeFile(data) {
-    //     fs.writeFile('./sample/README.md', data,  (err) => 
-    //     err ? console.log(err) : console.log('Success!')
+    //     fs.writeFile('logo.svg', data,  (err) => 
+    //     err ? console.log(err) : console.log('Generated logo.svg')
     //       );
     // }
 
-questions() 
+// questions() 
 .then((response) => {
     console.log(response);
-    // return generateResponses(response);
+    if (response.shape === "Circle") {
+        let shape= new Circle(response.shapeColor, response.textColor, response.text)
+        fs.writeFileSync("./shape.svg", shape.render())
+    }
+    if (response.shape === "Square") {
+        let shape= new Square(response.shapeColor, response.textColor, response.text)
+        fs.writeFileSync("./shape.svg", shape.render())
+    }
+    if (response.shape === "Triangle") {
+        let shape= new Triangle(response.shapeColor, response.textColor, response.text)
+        fs.writeFileSync("./shape.svg", shape.render())
+    }
 })
 // .then ((response) => {
 //     return writeFile(response);
