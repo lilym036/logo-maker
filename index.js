@@ -37,15 +37,21 @@ const Circle= require('./lib/circle');
     console.log(response);
     if (response.shape === "Circle") {
         let shape= new Circle(response.shapeColor, response.textColor, response.text)
-        fs.writeFileSync("./shape.svg", shape.render())
+        fs.writeFile("./logo.svg", shape.render(), (err) => 
+        err ? console.log(err) : console.log("Generated logo.svg")
+        );
     }
     if (response.shape === "Square") {
         let shape= new Square(response.shapeColor, response.textColor, response.text)
-        fs.writeFileSync("./shape.svg", shape.render())
+        fs.writeFile("./logo.svg", shape.render(), (err) => 
+        err ? console.log(err) : console.log("Generated logo.svg")
+        );
     }
     if (response.shape === "Triangle") {
         let shape= new Triangle(response.shapeColor, response.textColor, response.text)
-        fs.writeFileSync("./shape.svg", shape.render())
+        fs.writeFile("./logo.svg", shape.render(), (err) => 
+        err ? console.log(err) : console.log("Generated logo.svg")
+        );
     }
 })
 .catch (err => {
