@@ -19,7 +19,7 @@ const Circle= require('./lib/circle');
         },
         {
             type: 'list',
-            message: 'Please choose a shape from the options listed?',
+            message: 'Please choose a shape from the options listed.',
             name: 'shape',
             choices: ['Circle', 'Triangle', 'Square']
         },
