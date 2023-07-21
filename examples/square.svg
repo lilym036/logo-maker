@@ -1,5 +1,5 @@
 <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
         <rect x="50" y="20" width="150" height="150"
          style="fill: blue" />
-         <text x="120" y="100" font-size="25" text-anchor="middle" fill= "white">LN</text>
+         <text x="120" y="100" font-size="40" text-anchor="middle" fill= "white">LN</text>
 </svg>

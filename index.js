@@ -30,14 +30,8 @@ const Circle= require('./lib/circle');
         },
     
     ])
-    // }
 
-    // function writeFile(data) {
-    //     fs.writeFile('logo.svg', data,  (err) => 
-    //     err ? console.log(err) : console.log('Generated logo.svg')
-    //       );
-    // }
-
+// This indicates what to do according to what shape is chosen 
 // questions() 
 .then((response) => {
     console.log(response);
@@ -54,9 +48,6 @@ const Circle= require('./lib/circle');
         fs.writeFileSync("./shape.svg", shape.render())
     }
 })
-// .then ((response) => {
-//     return writeFile(response);
-// })
 .catch (err => {
      console.log(err)
 })
